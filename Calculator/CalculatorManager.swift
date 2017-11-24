@@ -79,6 +79,7 @@ struct CalculatorManager {
     
     mutating func clearMemory() {
         self.accumulator = 0
+        self.previousOperand = 0
         self.binaryOperationMemory = nil
     }
 }
