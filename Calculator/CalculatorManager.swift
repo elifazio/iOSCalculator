@@ -27,6 +27,7 @@ struct CalculatorManager {
     }
     
     private var accumulator: Double = 0.0
+    private var previousOperand: Double = 0.0
     private var binaryOperationMemory: PreviousBinaryOperation?
     private let operations: [String: Operation] = [
         "+": Operation.binaryOperation({ $0 + $1 }),
@@ -67,6 +68,7 @@ struct CalculatorManager {
     
     mutating func setOperand(_ operand: Double) {
         accumulator = operand
+        previousOperand = operand
     }
     
     mutating func doPreviousBinaryOperation() {
